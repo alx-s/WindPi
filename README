@@ -1,0 +1,20 @@
+//////
+WindPi
+//////
+
+First shot at using a Raspberry Pi to produce sound synthesis controlled by an ultrasonic sensor.
+It could be thought as a theremin producing some sort of wind sound.
+
+/////
+
+The ultrasonic sensor is a MaxBotix MB1000 which analog signal goes through a MCP3008 and then straight to the Raspberry.
+Here's a tutorial from adafruit explaining the how to do it : learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/
+A python script then processes the data and sends it to a Pure Data Patch via OSC.
+The sound synthesis is more than basic but the sensor's datas do arrive to Pd without any trouble.
+
+/////
+
+14-12-2012 - The python script should be modified. No need for the whole avgrange thing (which was useful when using a potentiometer) since the sensor sends a new data once every 50ms.
+
+21-12-2012 - Nothing new on the avgrange part. On the other hand I tried speech synthesis using google translate (in french. The thing works fine when on its own but problems arise 
+when google translate and Pd run at the same time. 
